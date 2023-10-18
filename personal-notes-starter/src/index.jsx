@@ -1,11 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import Navbar from './components/Navbar';
-
-// import style
+import App from './components/App';
 import './styles/style.css';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-    <Navbar />
+    <App />
 );

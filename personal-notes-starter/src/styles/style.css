@@ -9,7 +9,37 @@
   justify-content: flex-start;
 }
 
+.flex-justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+
 .search-icon {
   width: 20px;
   height: 19px;
+}
+
+.nav {
+  width: 100vw;
+  height: 73px;
+  border: 1px solid black;
+}
+
+.card {
+  width: 234px;
+  height: 261px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.container-icon-button {
+  position: absolute;
+  bottom: 27px;
+  width: inherit;
+}
+
+.archive-icon,
+.trash-icon {
+  width: 20px;
+  height: 20px;
 }
