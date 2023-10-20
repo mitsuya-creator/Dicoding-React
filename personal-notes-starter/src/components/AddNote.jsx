@@ -1,10 +1,10 @@
 import React from "react";
 
-function AddNote() {
+function AddNote({ isAddNote }) {
     return (
         <div>
             <section>
-                <button>X</button>
+                <button type="button" onClick={() => isAddNote()}>X</button>
             </section>
             <section>
                 <h1>Buat Catatan</h1>
