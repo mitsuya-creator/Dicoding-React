@@ -1,11 +1,15 @@
 import React from "react";
+import { counterByQuery, counterByStatus } from "../utils/counter";
 
 function ActionButton({ isActivedNote, isArchivedNote, isOnAddNote, onCount }) {
     const counted = onCount();
     let actived = "", archived = "";
     if (counted.query != "") {
-        actived = counted.initialData.filter(data => data.archived === false).filter(data => data.title.toLowerCase().includes(counted.query.toLocaleLowerCase())).length;
-        archived = counted.initialData.filter(data => data.archived === true).filter(data => data.title.toLowerCase().includes(counted.query.toLocaleLowerCase())).length;
+        actived = counterByQuery(counted.initialData, false, counted.query).length;
+        archived = counterByQuery(counted.initialData, true, counted.query).length;
+    } else {
+        actived = counterByStatus(counted.initialData, false).length;
+        archived = counterByStatus(counted.initialData, true).length;
     }
     return (
         <section className="flex-justify-start">
