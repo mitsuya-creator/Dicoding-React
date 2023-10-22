@@ -14,8 +14,14 @@ class App extends React.Component {
             initialData: getInitialData(),
             isNoteArchived: false,
             isAddNote: false,
+            query: "",
             viewData: function () {
-                return this.initialData.filter(data => data.archived === this.isNoteArchived)
+                if (this.query == "") {
+                    return this.initialData.filter(data => data.archived === this.isNoteArchived);
+                }
+                else {
+                    return this.initialData.filter(data => data.archived === this.isNoteArchived).filter(data => data.title.toLowerCase().includes(this.query.toLocaleLowerCase()));
+                }
             }
         }
         this.onChangeArchiveButton = this.onChangeArchiveButton.bind(this);
@@ -24,6 +30,17 @@ class App extends React.Component {
         this.onNotesArchivedButton = this.onNotesArchivedButton.bind(this);
         this.isOnAddNote = this.isOnAddNote.bind(this);
         this.onAddNote = this.onAddNote.bind(this);
+        this.onSearch = this.onSearch.bind(this);
+        this.onCountedSearchQuery = this.onCountedSearchQuery.bind(this);
+    }
+    onSearch(e) {
+        this.setState({ query: e.target.value })
+    }
+    onCountedSearchQuery() {
+        return {
+            query: this.state.query,
+            initialData: this.state.initialData
+        }
     }
     onChangeArchiveButton(id) {
         const updateData = this.state.initialData.map(data => {
@@ -65,12 +82,11 @@ class App extends React.Component {
         })
     }
     render() {
-        console.log(this.state.initialData)
         return (
             <>
-                <Navbar />
+                <Navbar onSearch={this.onSearch} />
                 <section className="container">
-                    <ActionButton isActivedNote={this.onNotesActiveButton} isArchivedNote={this.onNotesArchivedButton} isOnAddNote={this.isOnAddNote} />
+                    <ActionButton isActivedNote={this.onNotesActiveButton} isArchivedNote={this.onNotesArchivedButton} isOnAddNote={this.isOnAddNote} onCount={this.onCountedSearchQuery} />
                     <div className="parent-card">
                         {
                             this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) : <span>Tidak ada Catatan disini</span>
