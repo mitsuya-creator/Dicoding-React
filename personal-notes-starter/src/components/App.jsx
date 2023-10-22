@@ -4,7 +4,8 @@ import ActionButton from './ActionButton';
 import CardList from './CardList';
 import Footer from './Footer';
 import { AddNote } from './AddNote';
-import { getInitialData, showFormattedDate } from "../utils";
+import { getInitialData, showFormattedDate } from "../utils/index";
+import { counterByQuery, counterByStatus } from "../utils/counter";
 
 
 class App extends React.Component {
@@ -16,11 +17,11 @@ class App extends React.Component {
             isAddNote: false,
             query: "",
             viewData: function () {
-                if (this.query == "") {
-                    return this.initialData.filter(data => data.archived === this.isNoteArchived);
+                if (this.query != "") {
+                    return counterByQuery(this.initialData, this.isNoteArchived, this.query);
                 }
                 else {
-                    return this.initialData.filter(data => data.archived === this.isNoteArchived).filter(data => data.title.toLowerCase().includes(this.query.toLocaleLowerCase()));
+                    return counterByStatus(this.initialData, this.isNoteArchived);
                 }
             }
         }
