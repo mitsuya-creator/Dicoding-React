@@ -104,17 +104,31 @@ body {
   }
 
   .card {
-    width: 234px;
+    width: 322px;
     height: 261px;
-    border: 1px solid black;
     position: relative;
     margin: 13px;
+    padding: 9px 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 2px;
   }
 
-  .body-card {
-    height: 200;
-    overflow-y: scroll;
+  .card>h1 {
+    font-size: 20px;
+    font-weight: 800;
   }
+
+
+  .body-card {
+    width: 300px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    margin: 8px 0;
+    text-align: left;
+  }
+
 
   .container-icon-button {
     position: absolute;

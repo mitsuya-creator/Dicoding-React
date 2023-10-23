@@ -5,7 +5,7 @@ function CardList(props) {
         <div className="card">
             <h1>{props.title}</h1>
             <small>{props.showDateFormatted(props.createdAt)}</small>
-            <p className="body-card"><span>{props.body}</span></p>
+            <p className="body-card">{props.body}</p>
             <div className="flex-justify-around container-icon-button">
                 <button type="button" onClick={() => props.onDeleteButton(props.id)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="trash-icon">
