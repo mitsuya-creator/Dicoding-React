@@ -40,7 +40,8 @@ class App extends React.Component {
     onCountedSearchQuery() {
         return {
             query: this.state.query,
-            initialData: this.state.initialData
+            initialData: this.state.initialData,
+            isNoteArchived: this.state.isNoteArchived
         }
     }
     onChangeArchiveButton(id) {
@@ -83,18 +84,19 @@ class App extends React.Component {
         })
     }
     render() {
+        console.log("test")
         return (
             <>
-                <Navbar onSearch={this.onSearch} />
-                <section className="container">
+                <section className="sticky-top">
+                    <Navbar onSearch={this.onSearch} />
                     <ActionButton isActivedNote={this.onNotesActiveButton} isArchivedNote={this.onNotesArchivedButton} isOnAddNote={this.isOnAddNote} onCount={this.onCountedSearchQuery} />
-                    <div className="parent-card">
-                        {
-                            this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) : <span>Tidak ada Catatan disini</span>
-                        }
-                    </div>
-                    {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}
                 </section>
+                <div className="parent-card">
+                    {
+                        this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) : <span>Tidak ada Catatan disini</span>
+                    }
+                </div>
+                {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}
                 <Footer />
             </>
         )

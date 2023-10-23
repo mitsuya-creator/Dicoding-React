@@ -7,10 +7,23 @@
 :root {
   ---primary-color: #0F0F0F;
   ---secondary-color: #ffffff;
+}
+
+body {
   font-size: 16px;
+  font-family: "Raleway", Arial, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
+  .sticky-top {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: var(---secondary-color);
+    z-index: 2;
+    height: 180px;
+  }
+
   .flex-justify-start {
     display: flex;
     justify-content: flex-start;
@@ -53,12 +66,41 @@
     padding: 15px;
   }
 
+  .action-button {
+    margin-top: 32px;
+    width: 338px;
+    overflow-x: scroll;
+  }
+
+  .action-button button {
+    font-size: 16px;
+    height: 48px;
+    line-height: 16px;
+    /* margin: 0 32px 0 0; */
+  }
+
+  .button-primary {
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+  }
+
+  .active {
+    border-bottom: solid 1px var(---primary-color);
+  }
+
+  .button-secondary {
+    width: 80px;
+    background-color: var(---primary-color);
+    color: var(---secondary-color);
+    border-radius: 10px;
+  }
+
   .parent-card {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 22px;
-    grid-row-gap: 38px;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
   }
 
   .card {
@@ -66,6 +108,7 @@
     height: 261px;
     border: 1px solid black;
     position: relative;
+    margin: 13px;
   }
 
   .body-card {
