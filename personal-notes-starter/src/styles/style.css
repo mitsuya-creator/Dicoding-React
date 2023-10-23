@@ -76,7 +76,6 @@ body {
     font-size: 16px;
     height: 48px;
     line-height: 16px;
-    /* margin: 0 32px 0 0; */
   }
 
   .button-primary {
@@ -103,12 +102,17 @@ body {
     align-items: center;
   }
 
+  .flex-direction-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card {
     width: 322px;
-    height: 261px;
-    position: relative;
+    height: fit-content;
     margin: 13px;
-    padding: 9px 20px;
+    padding: 9px 20px 27px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 2px;
   }
@@ -121,9 +125,8 @@ body {
 
   .body-card {
     width: 300px;
+    height: fit-content;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
     overflow: hidden;
     margin: 8px 0;
     text-align: left;
@@ -131,9 +134,8 @@ body {
 
 
   .container-icon-button {
-    position: absolute;
-    bottom: 27px;
     width: inherit;
+    margin-top: 35px;
   }
 
   .container-icon-button>button {
