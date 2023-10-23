@@ -5,7 +5,7 @@ function Navbar(props) {
     return (
         <>
             <nav className="flex-justify-start nav">
-                <h1>Notes</h1>
+                <h1 className="text-color-white">Notes</h1>
                 <section>
                     <SearchBox onSearch={props.onSearch} />
                 </section>

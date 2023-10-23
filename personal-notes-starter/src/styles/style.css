@@ -4,66 +4,76 @@
   box-sizing: border-box;
 }
 
-.flex-justify-start {
-  display: flex;
-  justify-content: flex-start;
+:root {
+  ---primary-color: #0F0F0F;
+  ---secondary-color: #ffffff;
 }
 
-.flex-justify-around {
-  display: flex;
-  justify-content: space-around;
-}
-
-.search-icon {
-  width: 20px;
-  height: 19px;
-}
-
-.nav {
-  width: 100vw;
-  height: 73px;
-
-}
-
-.parent-card {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 22px;
-  grid-row-gap: 38px;
-}
-
-.card {
-  width: 234px;
-  height: 261px;
-  border: 1px solid black;
-  position: relative;
-}
-
-.body-card {
-  height: 200;
-  overflow-y: scroll;
-}
-
-.container-icon-button {
-  position: absolute;
-  bottom: 27px;
-  width: inherit;
-}
-
-.container-icon-button>button {
-  cursor: pointer;
-}
-
-.archive-icon,
-.trash-icon {
-  width: 20px;
-  height: 20px;
-}
-
-/* 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
+  .flex-justify-start {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .flex-justify-around {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .search-icon {
+    width: 20px;
+    height: 19px;
+  }
+
   .nav {
     width: 100vw;
-  } 
-}*/
+    height: 89px;
+    background-color: var(---primary-color);
+  }
+
+  .text-color-white {
+    color: var(---secondary-color);
+  }
+
+  .nav>h1 {
+    font-size: 32px;
+    margin: 25px 0 25px 41px;
+    font-weight: 800;
+  }
+
+  .parent-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 22px;
+    grid-row-gap: 38px;
+  }
+
+  .card {
+    width: 234px;
+    height: 261px;
+    border: 1px solid black;
+    position: relative;
+  }
+
+  .body-card {
+    height: 200;
+    overflow-y: scroll;
+  }
+
+  .container-icon-button {
+    position: absolute;
+    bottom: 27px;
+    width: inherit;
+  }
+
+  .container-icon-button>button {
+    cursor: pointer;
+  }
+
+  .archive-icon,
+  .trash-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
