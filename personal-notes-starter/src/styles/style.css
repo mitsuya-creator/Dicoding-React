@@ -147,4 +147,67 @@ body {
     width: 20px;
     height: 20px;
   }
+
+  .addnote {
+    position: fixed;
+    top: 89px;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(---secondary-color);
+    z-index: 3;
+    padding: 13px 16px;
+  }
+
+  .close-addnote {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2px;
+  }
+
+  .close-addnote>button {
+    height: 20px;
+    width: 20px;
+    font-size: 25px;
+  }
+
+  .form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form>form {
+    margin-top: 30px;
+  }
+
+  form input {
+    width: 287px;
+    height: 50px;
+    padding: 16px;
+    border-radius: 10px;
+    border: solid 1px var(---primary-color);
+  }
+
+  form p {
+    margin: 0 0 20px 0;
+  }
+
+  textarea {
+    box-sizing: border-box;
+    width: 287px;
+    height: 292px;
+    border-radius: 10px;
+    padding: 16px;
+  }
+
+  .button-submit {
+    width: 287px;
+    height: 50px;
+    color: var(---secondary-color);
+    background-color: var(---primary-color);
+    border-radius: 10px;
+    margin-top: 41px;
+    padding: 16px;
+  }
 }

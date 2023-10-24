@@ -33,22 +33,22 @@ class AddNote extends React.Component {
     }
     render() {
         return (
-            <div>
-                <section>
-                    <button type="button" onClick={() => this.props.isOnAddNote()}>X</button>
+            <div className="addnote">
+                <section className="close-addnote">
+                    <button type="button" onClick={() => this.props.isOnAddNote()} className="button-primary">X</button>
                 </section>
-                <section>
+                <section className="form">
                     <h1>Buat Catatan</h1>
                     <form onSubmit={e => this.onSubmitHandler(e)}>
                         <label htmlFor="judul-catatan">
                             <input type="text" placeholder="Judul catatan" name="judul-catatan" onChange={e => this.onChange(e)} maxLength={50} value={this.state.title} />
                         </label>
-                        <span>Sisa karakter: {50 - this.state.title.length}</span>
+                        <p>Sisa karakter: {50 - this.state.title.length}</p>
                         <label htmlFor="isi-catatan">
-                            <input type="text" placeholder="Isi catatan" name="isi-catatan" onChange={e => this.onChange(e)} value={this.state.body} />
+                            <textarea type="text" placeholder="Isi catatan" name="isi-catatan" onChange={e => this.onChange(e)} value={this.state.body} />
                         </label>
                         <section>
-                            <button type="submit">Tambahkan</button>
+                            <button type="submit" className="button-submit">Tambahkan</button>
                         </section>
                     </form>
                 </section>
