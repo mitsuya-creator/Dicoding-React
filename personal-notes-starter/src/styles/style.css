@@ -210,4 +210,17 @@ body {
     margin-top: 41px;
     padding: 16px;
   }
+
+  .container-footer {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 61px 0;
+  }
+
+  .container-footer svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 10px;
+  }
 }
