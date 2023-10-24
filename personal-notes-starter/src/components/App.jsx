@@ -93,7 +93,10 @@ class App extends React.Component {
                 </section>
                 <div className="parent-card">
                     {
-                        this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) : <span>Tidak ada Catatan disini</span>
+                        this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) :
+                            <div className="flex justify-center align-center no_notes">
+                                <span>Tidak ada Catatan disini</span>
+                            </div>
                     }
                 </div>
                 {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}

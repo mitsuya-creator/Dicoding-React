@@ -223,4 +223,20 @@ body {
     height: 20px;
     margin: 0 10px;
   }
+
+  .flex {
+    display: flex;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .no_notes {
+    height: 500px;
+  }
 }
