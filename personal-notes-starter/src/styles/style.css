@@ -71,7 +71,7 @@ body {
   .action-button {
     margin-top: 32px;
     width: 338px;
-    overflow-x: scroll;
+    overflow: scroll;
   }
 
   .action-button button {
@@ -243,7 +243,7 @@ body {
   }
 }
 
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 769px) {
   .sticky-top {
     position: -webkit-sticky;
     position: sticky;
@@ -327,10 +327,13 @@ body {
   }
 
   .parent-card {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
+    margin-left: 73px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    width: 70vw;
   }
 
   .flex-direction-column {
@@ -340,9 +343,8 @@ body {
   }
 
   .card {
-    width: 322px;
+    width: 234px;
     height: fit-content;
-    margin: 13px;
     padding: 9px 20px 27px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 2px;
@@ -355,7 +357,7 @@ body {
 
 
   .body-card {
-    width: 300px;
+    width: 200px;
     height: fit-content;
     display: -webkit-box;
     overflow: hidden;
@@ -468,6 +470,7 @@ body {
   }
 
   .no_notes {
-    height: 500px;
+    height: 250px;
+    width: 100vw;
   }
 }

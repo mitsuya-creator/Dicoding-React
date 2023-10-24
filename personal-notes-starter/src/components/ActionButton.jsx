@@ -3,7 +3,7 @@ import { counterByQuery, counterByStatus } from "../utils/counter";
 
 function ActionButton({ isActivedNote, isArchivedNote, isOnAddNote, onCount }) {
     const counted = onCount();
-    const maxWidthScreen = 428;
+    const maxWidthScreen = 768;
     let activedCount = "", archivedCount = "";
     if (counted.query != "") {
         activedCount = counterByQuery(counted.initialData, false, counted.query).length;
