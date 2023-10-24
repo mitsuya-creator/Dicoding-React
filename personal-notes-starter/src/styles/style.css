@@ -299,9 +299,8 @@ body {
   }
 
   .action-button {
-    margin-top: 32px;
-    width: 338px;
-    overflow-x: scroll;
+    margin: 32px 0 0 73px;
+    width: fit-content;
   }
 
   .action-button button {
@@ -311,7 +310,7 @@ body {
   }
 
   .button-primary {
-    width: fit-content;
+    width: 208px;
     background-color: transparent;
     border: none;
   }
@@ -321,7 +320,7 @@ body {
   }
 
   .button-secondary {
-    width: 80px;
+    width: 208px;
     background-color: var(---primary-color);
     color: var(---secondary-color);
     border-radius: 10px;
