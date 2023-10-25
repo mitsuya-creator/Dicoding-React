@@ -384,7 +384,7 @@ body {
   .addnote {
     position: fixed;
     top: 89px;
-    width: 100vw;
+    width: 427px;
     height: 100vh;
     background-color: var(---secondary-color);
     z-index: 3;
