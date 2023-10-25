@@ -12,45 +12,161 @@
 body {
   font-size: 16px;
   font-family: "Raleway", Arial, Helvetica, sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(---secondary-color);
+  z-index: 2;
+  height: 180px;
+}
+
+.flex-justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-justify-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav {
+  width: 100vw;
+  height: 89px;
+  background-color: var(---primary-color);
+  position: relative;
+}
+
+.text-color-white {
+  color: var(---secondary-color);
+}
+
+.nav>h1 {
+  font-size: 32px;
+  margin: 25px 0 25px 41px;
+  font-weight: 800;
+}
+
+.action-button button {
+  font-size: 16px;
+  height: 48px;
+  line-height: 16px;
+}
+
+.search-container>input {
+  height: 30px;
+  width: 50vw;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: var(---secondary-color);
+}
+
+.active {
+  border-bottom: solid 1px var(---primary-color);
+}
+
+.flex-direction-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card>h1 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.container-icon-button {
+  width: inherit;
+  margin-top: 35px;
+}
+
+.archive-icon,
+.trash-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.close-addnote {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2px;
+}
+
+.close-addnote>button {
+  height: 20px;
+  width: 20px;
+  font-size: 25px;
+}
+
+.form {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form>form {
+  margin-top: 30px;
+}
+
+form input {
+  width: 287px;
+  height: 50px;
+  padding: 16px;
+  border-radius: 10px;
+  border: solid 1px var(---primary-color);
+}
+
+form p {
+  margin: 0 0 20px 0;
+}
+
+textarea {
+  box-sizing: border-box;
+  width: 287px;
+  height: 292px;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.button-submit {
+  width: 287px;
+  height: 50px;
+  color: var(---secondary-color);
+  background-color: var(---primary-color);
+  border-radius: 10px;
+  margin-top: 41px;
+  padding: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.no_notes {
+  height: 500px;
 }
 
 @media only screen and (max-width: 768px) and (min-width: 320px) {
-  .sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: var(---secondary-color);
-    z-index: 2;
-    height: 180px;
-  }
-
-  .flex-justify-start {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .flex-justify-around {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .nav {
-    width: 100vw;
-    height: 89px;
-    background-color: var(---primary-color);
-    position: relative;
-  }
-
-  .text-color-white {
-    color: var(---secondary-color);
-  }
-
-  .nav>h1 {
-    font-size: 32px;
-    margin: 25px 0 25px 41px;
-    font-weight: 800;
-  }
-
   .search-container {
     position: absolute;
     right: 35px;
@@ -59,35 +175,16 @@ body {
     align-items: center;
   }
 
-  .search-container>input {
-    height: 30px;
-    width: 50vw;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: var(---secondary-color);
-  }
-
   .action-button {
     margin-top: 32px;
     width: 338px;
     overflow: scroll;
   }
 
-  .action-button button {
-    font-size: 16px;
-    height: 48px;
-    line-height: 16px;
-  }
-
   .button-primary {
     width: fit-content;
     background-color: transparent;
     border: none;
-  }
-
-  .active {
-    border-bottom: solid 1px var(---primary-color);
   }
 
   .button-secondary {
@@ -104,12 +201,6 @@ body {
     align-items: center;
   }
 
-  .flex-direction-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .card {
     width: 322px;
     height: fit-content;
@@ -119,12 +210,6 @@ body {
     border-radius: 2px;
   }
 
-  .card>h1 {
-    font-size: 20px;
-    font-weight: 800;
-  }
-
-
   .body-card {
     width: 300px;
     height: fit-content;
@@ -132,22 +217,6 @@ body {
     overflow: hidden;
     margin: 8px 0;
     text-align: left;
-  }
-
-
-  .container-icon-button {
-    width: inherit;
-    margin-top: 35px;
-  }
-
-  .container-icon-button>button {
-    cursor: pointer;
-  }
-
-  .archive-icon,
-  .trash-icon {
-    width: 20px;
-    height: 20px;
   }
 
   .addnote {
@@ -160,58 +229,6 @@ body {
     padding: 13px 16px;
   }
 
-  .close-addnote {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 2px;
-  }
-
-  .close-addnote>button {
-    height: 20px;
-    width: 20px;
-    font-size: 25px;
-  }
-
-  .form {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form>form {
-    margin-top: 30px;
-  }
-
-  form input {
-    width: 287px;
-    height: 50px;
-    padding: 16px;
-    border-radius: 10px;
-    border: solid 1px var(---primary-color);
-  }
-
-  form p {
-    margin: 0 0 20px 0;
-  }
-
-  textarea {
-    box-sizing: border-box;
-    width: 287px;
-    height: 292px;
-    border-radius: 10px;
-    padding: 16px;
-  }
-
-  .button-submit {
-    width: 287px;
-    height: 50px;
-    color: var(---secondary-color);
-    background-color: var(---primary-color);
-    border-radius: 10px;
-    margin-top: 41px;
-    padding: 16px;
-  }
 
   .container-footer {
     width: 100vw;
@@ -226,60 +243,10 @@ body {
     margin: 0 10px;
   }
 
-  .flex {
-    display: flex;
-  }
 
-  .justify-center {
-    justify-content: center;
-  }
-
-  .align-center {
-    align-items: center;
-  }
-
-  .no_notes {
-    height: 500px;
-  }
 }
 
 @media only screen and (min-width: 769px) {
-  .sticky-top {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: var(---secondary-color);
-    z-index: 2;
-    height: 180px;
-  }
-
-  .flex-justify-start {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  .flex-justify-around {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .nav {
-    width: 100vw;
-    height: 89px;
-    background-color: var(---primary-color);
-    position: relative;
-  }
-
-  .text-color-white {
-    color: var(---secondary-color);
-  }
-
-  .nav>h1 {
-    font-size: 32px;
-    margin: 25px 0 25px 41px;
-    font-weight: 800;
-  }
-
   .search-container {
     position: absolute;
     height: 89px;
@@ -289,34 +256,15 @@ body {
     align-items: center;
   }
 
-  .search-container>input {
-    height: 30px;
-    width: 50vw;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background-color: var(---secondary-color);
-  }
-
   .action-button {
     margin: 32px 0 0 73px;
     width: fit-content;
-  }
-
-  .action-button button {
-    font-size: 16px;
-    height: 48px;
-    line-height: 16px;
   }
 
   .button-primary {
     width: 208px;
     background-color: transparent;
     border: none;
-  }
-
-  .active {
-    border-bottom: solid 1px var(---primary-color);
   }
 
   .button-secondary {
@@ -336,23 +284,12 @@ body {
     width: 70vw;
   }
 
-  .flex-direction-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .card {
     width: 234px;
     height: fit-content;
     padding: 9px 20px 27px;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
     border-radius: 2px;
-  }
-
-  .card>h1 {
-    font-size: 20px;
-    font-weight: 800;
   }
 
 
@@ -366,21 +303,6 @@ body {
   }
 
 
-  .container-icon-button {
-    width: inherit;
-    margin-top: 35px;
-  }
-
-  .container-icon-button>button {
-    cursor: pointer;
-  }
-
-  .archive-icon,
-  .trash-icon {
-    width: 20px;
-    height: 20px;
-  }
-
   .addnote {
     position: fixed;
     top: 89px;
@@ -389,59 +311,6 @@ body {
     background-color: var(---secondary-color);
     z-index: 3;
     padding: 13px 16px;
-  }
-
-  .close-addnote {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 2px;
-  }
-
-  .close-addnote>button {
-    height: 20px;
-    width: 20px;
-    font-size: 25px;
-  }
-
-  .form {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form>form {
-    margin-top: 30px;
-  }
-
-  form input {
-    width: 287px;
-    height: 50px;
-    padding: 16px;
-    border-radius: 10px;
-    border: solid 1px var(---primary-color);
-  }
-
-  form p {
-    margin: 0 0 20px 0;
-  }
-
-  textarea {
-    box-sizing: border-box;
-    width: 287px;
-    height: 292px;
-    border-radius: 10px;
-    padding: 16px;
-  }
-
-  .button-submit {
-    width: 287px;
-    height: 50px;
-    color: var(---secondary-color);
-    background-color: var(---primary-color);
-    border-radius: 10px;
-    margin-top: 41px;
-    padding: 16px;
   }
 
   .container-footer {
@@ -463,25 +332,13 @@ body {
     margin: 10px;
   }
 
-  .flex {
-    display: flex;
-  }
-
-  .justify-center {
-    justify-content: center;
-  }
-
-  .align-center {
-    align-items: center;
-  }
-
-  .no_notes {
-    height: 250px;
-    width: 100vw;
-  }
-
   .container-desktop {
     display: flex;
     justify-content: flex-start;
+  }
+
+  .no_notes {
+    height: 300px;
+    width: 90vw;
   }
 }
