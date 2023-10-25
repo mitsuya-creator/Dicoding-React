@@ -445,16 +445,22 @@ body {
   }
 
   .container-footer {
-    width: 100vw;
+    width: 126px;
+    height: 452px;
+    position: fixed;
+    right: 0;
+    top: 89px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    border-radius: 2px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    margin: 61px 0;
   }
 
   .container-footer svg {
-    width: 20px;
-    height: 20px;
-    margin: 0 10px;
+    width: 23px;
+    margin: 10px;
   }
 
   .flex {
@@ -472,5 +478,10 @@ body {
   .no_notes {
     height: 250px;
     width: 100vw;
+  }
+
+  .container-desktop {
+    display: flex;
+    justify-content: flex-start;
   }
 }

@@ -91,16 +91,18 @@ class App extends React.Component {
                     <Navbar onSearch={this.onSearch} />
                     <ActionButton isActivedNote={this.onNotesActiveButton} isArchivedNote={this.onNotesArchivedButton} isOnAddNote={this.isOnAddNote} onCount={this.onCountedSearchQuery} />
                 </section>
-                <div className="parent-card">
-                    {
-                        this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) :
-                            <div className="flex justify-center align-center no_notes">
-                                <span>Tidak ada Catatan disini</span>
-                            </div>
-                    }
-                </div>
-                {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}
-                <Footer />
+                <section className="container-desktop">
+                    <div className="parent-card">
+                        {
+                            this.state.viewData().length != 0 ? this.state.viewData().map(data => <CardList {...data} showDateFormatted={showFormattedDate} key={data.id} onChangeArchiveButton={this.onChangeArchiveButton} onDeleteButton={this.onDeleteButton} />) :
+                                <div className="flex justify-center align-center no_notes">
+                                    <span>Tidak ada Catatan disini</span>
+                                </div>
+                        }
+                    </div>
+                    {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}
+                    <Footer />
+                </section>
             </>
         )
     }
