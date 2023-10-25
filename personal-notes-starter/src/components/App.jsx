@@ -85,7 +85,6 @@ class App extends React.Component {
         })
     }
     render() {
-        console.log("test")
         return (
             <>
                 <section className="sticky-top">
