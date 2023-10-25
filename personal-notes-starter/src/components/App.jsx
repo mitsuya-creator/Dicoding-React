@@ -6,6 +6,7 @@ import Footer from './Footer';
 import { AddNote } from './AddNote';
 import { getInitialData, showFormattedDate } from "../utils/index";
 import { counterByQuery, counterByStatus } from "../utils/counter";
+import { Analytics } from "@vercel/analytics/react";
 
 
 class App extends React.Component {
@@ -103,6 +104,7 @@ class App extends React.Component {
                     {this.state.isAddNote ? <AddNote isOnAddNote={this.isOnAddNote} onAddNote={this.onAddNote} /> : null}
                     <Footer />
                 </section>
+                <Analytics />
             </>
         )
     }
